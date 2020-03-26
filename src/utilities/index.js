@@ -29,3 +29,10 @@ export const capitalize = (word) => {
 	const capital = word.charAt(0).toUpperCase() + word.slice(1);
 	return capital;
 };
+
+export const updateObject = (oldObject, updateProperties) => {
+    return {
+        ...oldObject,
+        ...updateProperties
+    }
+}

@@ -11,4 +11,8 @@ export const CLEAR_AUTH_ERROR = 'CLEAR_AUTH_ERROR';
 
 export const GET_ARTICLE = 'GET_ARTICLE';
 
+export const FETCH_FEED_START = 'FETCH_FEED_START';
+export const FETCH_FEED_SUCCESS = 'FETCH_FEED_SUCCESS';
+export const FETCH_FEED_FAIL = 'FETCH_FEED_FAIL';
+
 
