@@ -12,7 +12,7 @@ const fetchOrderStart = (state, action) => {
 };
 
 const fetchOrderSuccess = (state, action) => {
-    return updateObject(state, {loading: false, feed: action.feeds })
+    return updateObject(state, {loading: false, feeds: action.feeds })
 };
 
 const fetchOrderFail = (state, action) => {

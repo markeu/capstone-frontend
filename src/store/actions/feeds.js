@@ -1,10 +1,12 @@
 import * as actionTypes from './actionTypes';
 import { request, makeUrl } from '../../utilities';
 
-export const fetchFeedSuccess = (order) => {
+const token = localStorage.getItem('jwtToken');
+
+export const fetchFeedSuccess = (feed) => {
     return {
         type: actionTypes.FETCH_FEED_SUCCESS,
-        order: order
+        feeds: feed
     }
 }
 
@@ -27,8 +29,8 @@ export const fetchFeeds = () => async (dispatch) => {
 	const url = makeUrl('/feeds');
 	const res = await request(url, 'GET', null, token);
 	if (res.statusCode !== 200) {
-		return dispatch({ type: FETCH_FEED_FAIL, payload: res });
+		return dispatch(fetchFeedFail(res));
 	}
 	const { data } = res;
-	return dispatch({ type: FETCH_FEED_SUCCESS, payload: data });
+	return dispatch(fetchFeedSuccess(data));
 };
