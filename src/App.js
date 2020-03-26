@@ -22,7 +22,10 @@ const theme = createMuiTheme({
         dark: '#7f0000',
         contrastText: '#fff'
       },
-    }, 
+    },
+    typography: {
+      useNextVariants: true
+    } 
 });
 
 

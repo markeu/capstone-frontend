@@ -23,7 +23,6 @@ export const fetchFeedStart = () => {
     }
 }
 
-
 export const fetchFeeds = () => async (dispatch) => {
 	dispatch(fetchFeedStart());
 	const url = makeUrl('/feeds');
