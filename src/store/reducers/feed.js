@@ -1,5 +1,5 @@
 import { updateObject } from '../../utilities';
-import * as actionTypes from '../actions/actionTypes';
+import { FETCH_FEED_FAIL, FETCH_FEED_SUCCESS, FETCH_FEED_START   } from '../actions/actionTypes';
 
 const initialState = {
 	feeds: [],
@@ -21,9 +21,9 @@ const fetchOrderFail = (state, action) => {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case actionTypes.FETCH_FEED_START: return fetchOrderStart(state, action);
-        case actionTypes.FETCH_FEED_SUCCESS: return fetchOrderSuccess(state, action);
-        case actionTypes.FETCH_FEED_FAIL: return fetchOrderFail(state, action);
+        case FETCH_FEED_START: return fetchOrderStart(state, action);
+        case FETCH_FEED_SUCCESS: return fetchOrderSuccess(state, action);
+        case FETCH_FEED_FAIL: return fetchOrderFail(state, action);
         default:return state
     }
 };

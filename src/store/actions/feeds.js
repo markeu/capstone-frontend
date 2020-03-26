@@ -1,25 +1,25 @@
-import * as actionTypes from './actionTypes';
+import { FETCH_FEED_FAIL, FETCH_FEED_SUCCESS, FETCH_FEED_START   } from './actionTypes';
 import { request, makeUrl } from '../../utilities';
 
 const token = localStorage.getItem('jwtToken');
 
 export const fetchFeedSuccess = (feed) => {
     return {
-        type: actionTypes.FETCH_FEED_SUCCESS,
+        type: FETCH_FEED_SUCCESS,
         feeds: feed
     }
 }
 
 export const fetchFeedFail = ( error ) => {
     return {
-        type: actionTypes.FETCH_FEED_FAIL,
+        type: FETCH_FEED_FAIL,
         error: error
     }
 }
 
 export const fetchFeedStart = () => {
     return {
-        type: actionTypes.FETCH_FEED_START
+        type: FETCH_FEED_START
     }
 }
 
