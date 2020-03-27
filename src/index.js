@@ -5,11 +5,18 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import App from './App';
-import feedReducer from './store/reducers/feed';
+import feedReducer from './store/reducers/feedReducer';
+import authReducer from './store/reducers/authReducer';
+import userReducer from './store/reducers/usersReducer';
 
+const rootReducer = combineReducers({
+    feeds: feedReducer,
+    auth: authReducer,
+    users: userReducer,
+})
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(feedReducer, composeEnhancers(
+const store = createStore(rootReducer, composeEnhancers(
     applyMiddleware(thunk)
 ));
 

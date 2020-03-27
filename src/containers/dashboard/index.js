@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
-import * as actions from '../../store/actions';
+import { fetchFeeds } from '../../store/actions';
 import Feeds from '../../components/Feeds';
 import Spinners from '../../components/UI/Spinners/Spinners'
 
@@ -37,7 +37,7 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = dispatch => {
     return {
-      onFetchFeeds: () => dispatch(actions.fetchFeeds())
+      onFetchFeeds: () => dispatch(fetchFeeds())
     }
   }
   
